@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>307072735315-gov2qt8bk9h96j1o8o8pm45ur55p5pmt.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.307072735315-gov2qt8bk9h96j1o8o8pm45ur55p5pmt</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCvweYxojOesYqk1-gtHZ8vKYX-1H0qxqU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>307072735315</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>edu.calpoly.mpieczyn.Lab7Map</string>
+	<key>PROJECT_ID</key>
+	<string>lab-7-bfdbe</string>
+	<key>STORAGE_BUCKET</key>
+	<string>lab-7-bfdbe.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:307072735315:ios:dd8ce69962349a12</string>
+	<key>DATABASE_URL</key>
+	<string>https://lab-7-bfdbe.firebaseio.com</string>
+</dict>
+</plist>
