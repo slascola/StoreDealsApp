@@ -1,24 +1,613 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l3n-Lf-iv2">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Kefa.ttf">
+            <string>Kefa-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Personal Settings-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PersonalSettingsViewController" customModule="FinalProject436" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Saved Stores" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67l-oh-cXw">
+                                <rect key="frame" x="8" y="127" width="110" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wbY-s0-U13">
+                                <rect key="frame" x="8" y="156" width="360" height="137"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="137" id="yRJ-Tt-DBi"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="savedCell" rowHeight="27" id="EDH-Wq-313" customClass="SavedTableViewCell" customModule="FinalProject436" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="360" height="27"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EDH-Wq-313" id="psV-P4-YtY">
+                                            <rect key="frame" x="0.0" y="0.0" width="360" height="26.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Store Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfB-TS-tBL">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="savedStoreLabel" destination="sfB-TS-tBL" id="8UF-3v-IcU"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Vhk-hd-IB3"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="rfy-5T-hzj"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Blocked Stores" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usA-dl-mOv">
+                                <rect key="frame" x="8" y="306" width="122" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3RN-YZ-R60">
+                                <rect key="frame" x="8" y="335" width="360" height="137"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="137" id="ZMm-3b-kpf"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="blockedCell" rowHeight="21" id="wxt-93-wnW" customClass="BlockedTableViewCell" customModule="FinalProject436" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="360" height="21"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wxt-93-wnW" id="6zL-mu-tvQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="360" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Blocked Store" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6N-78-wVD">
+                                                    <rect key="frame" x="9" y="-1" width="351" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="blockedLabel" destination="S6N-78-wVD" id="Pn2-Pl-xtv"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="LUP-kR-I0V"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Iri-fP-mFB"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Saved Coupons" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YfS-FJ-L8r">
+                                <rect key="frame" x="16" y="480" width="155" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gtt-YS-QSZ">
+                                <rect key="frame" x="8" y="509" width="360" height="138"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="138" id="bpO-Ig-cdx"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="couponCell" rowHeight="58" id="8J6-3b-WJd" customClass="CouponTableViewCell" customModule="FinalProject436" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="360" height="58"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8J6-3b-WJd" id="4fx-Fx-SyI">
+                                            <rect key="frame" x="0.0" y="0.0" width="360" height="57.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coupon Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0l-YY-6OX">
+                                                    <rect key="frame" x="15" y="-3" width="345" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Exp Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CrC-fX-oXY">
+                                                    <rect key="frame" x="15" y="11" width="345" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="couponNameLabel" destination="e0l-YY-6OX" id="fd3-v9-F2L"/>
+                                            <outlet property="expDateLabel" destination="CrC-fX-oXY" id="ipH-XC-dfc"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="7fw-Q1-9f2"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="WKK-CZ-XoU"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="3RN-YZ-R60" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="2Zv-jt-yDN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3RN-YZ-R60" secondAttribute="trailing" constant="7" id="5fa-iy-oD5"/>
+                            <constraint firstItem="gtt-YS-QSZ" firstAttribute="top" secondItem="3RN-YZ-R60" secondAttribute="bottom" constant="37" id="GaJ-yQ-9B2"/>
+                            <constraint firstItem="3RN-YZ-R60" firstAttribute="top" secondItem="wbY-s0-U13" secondAttribute="bottom" constant="42" id="LbQ-jn-Ywx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gtt-YS-QSZ" secondAttribute="trailing" constant="7" id="Z2I-jr-BFt"/>
+                            <constraint firstItem="wbY-s0-U13" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="92" id="enr-WD-ZdQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wbY-s0-U13" secondAttribute="trailing" constant="7" id="ifV-ZU-XGP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gtt-YS-QSZ" secondAttribute="bottom" constant="20" id="juo-1O-ENk"/>
+                            <constraint firstItem="wbY-s0-U13" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="lGV-fX-Iyw"/>
+                            <constraint firstItem="gtt-YS-QSZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="upp-qT-Khy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Personal Settings" id="qv5-5L-zq6">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="M8k-sk-d1q">
+                            <connections>
+                                <action selector="logoutButton:" destination="BYZ-38-t0r" id="o5n-nG-A6S"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="blockedStoresHeading" destination="usA-dl-mOv" id="nOF-f7-Zea"/>
+                        <outlet property="savedCouponsHeading" destination="YfS-FJ-L8r" id="0w0-xf-oC4"/>
+                        <outlet property="savedStoresHeading" destination="67l-oh-cXw" id="xxg-Ed-QJY"/>
+                        <outlet property="tableView1" destination="wbY-s0-U13" id="ezF-gP-Fv2"/>
+                        <outlet property="tableView2" destination="3RN-YZ-R60" id="qiF-ZS-2fi"/>
+                        <outlet property="tableView3" destination="gtt-YS-QSZ" id="rwe-AC-tCr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2013.5999999999999" y="89.505247376311857"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="Jf8-aO-YcL">
+            <objects>
+                <viewController title="Login View Controller" id="qLd-j7-n40" customClass="LoginViewController" customModule="FinalProject436" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zgO-lX-xHm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yG1-hf-480">
+                                <rect key="frame" x="29" y="155" width="54" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueX-p6-I3O">
+                                <rect key="frame" x="29" y="279" width="89" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6pd-C7-m18">
+                                <rect key="frame" x="158" y="150" width="153" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wDQ-t2-Qb9">
+                                <rect key="frame" x="158" y="270" width="153" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Log In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHs-Bh-9eb">
+                                <rect key="frame" x="153" y="30" width="68" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjE-iB-PBS">
+                                <rect key="frame" x="164" y="408" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="loginPressed:" destination="qLd-j7-n40" eventType="touchUpInside" id="gRH-Sq-ppv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="7MJ-1c-PJ1"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Create New Account" id="D9t-QQ-EvR"/>
+                    <connections>
+                        <outlet property="loginField" destination="6pd-C7-m18" id="OQh-5f-smj"/>
+                        <outlet property="passwordField" destination="wDQ-t2-Qb9" id="xmo-Fx-7er"/>
+                        <segue destination="m9D-F7-84i" kind="show" identifier="createSegue" id="jlP-dd-OLD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7WE-ka-i3u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5.5999999999999996" y="804.64767616191909"/>
+        </scene>
+        <!--Store Information-->
+        <scene sceneID="WU7-YP-hTr">
+            <objects>
+                <viewController title="Store Information" id="fnB-fr-csc" customClass="StoreInfoViewController" customModule="FinalProject436" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VLR-eV-MP5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nQm-Kb-wGB">
+                                <rect key="frame" x="0.0" y="107" width="350" height="244"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="244" id="8AR-nP-AGp"/>
+                                </constraints>
+                                <color key="separatorColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="storeInfoCell" rowHeight="70" id="mHN-tq-Ab3" customClass="StoreInfoCell" customModule="FinalProject436" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="350" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mHN-tq-Ab3" id="7sD-Kk-Hnd">
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="69.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="CouponName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0TK-oE-cZi">
+                                                    <rect key="frame" x="15" y="6" width="290" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="15" id="JON-C4-aou"/>
+                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="37" id="kQp-uU-OPE"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plQ-NL-mdL">
+                                                    <rect key="frame" x="298" y="32" width="37" height="20"/>
+                                                    <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ExpDate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FAO-KV-hca">
+                                                    <rect key="frame" x="15" y="18" width="265" height="19"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="19" id="LvP-by-tfG"/>
+                                                        <constraint firstAttribute="height" constant="19" id="qQf-DU-Cna"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="plQ-NL-mdL" secondAttribute="trailing" constant="15" id="0gR-K9-Xeq"/>
+                                                <constraint firstItem="FAO-KV-hca" firstAttribute="top" secondItem="0TK-oE-cZi" secondAttribute="bottom" constant="25" id="1eK-aM-FCO"/>
+                                                <constraint firstAttribute="trailing" secondItem="FAO-KV-hca" secondAttribute="trailing" constant="70" id="2GP-Qo-4Tv"/>
+                                                <constraint firstItem="FAO-KV-hca" firstAttribute="top" secondItem="0TK-oE-cZi" secondAttribute="bottom" constant="-3" id="5Sj-xg-uxW"/>
+                                                <constraint firstAttribute="bottom" secondItem="plQ-NL-mdL" secondAttribute="bottom" constant="17.5" id="9qs-nD-WLF"/>
+                                                <constraint firstItem="FAO-KV-hca" firstAttribute="top" secondItem="0TK-oE-cZi" secondAttribute="bottom" constant="-3" id="I28-XE-JQP"/>
+                                                <constraint firstItem="0TK-oE-cZi" firstAttribute="top" secondItem="7sD-Kk-Hnd" secondAttribute="top" constant="6" id="J54-TC-2mf"/>
+                                                <constraint firstItem="plQ-NL-mdL" firstAttribute="leading" secondItem="0TK-oE-cZi" secondAttribute="trailing" constant="-7" id="Sll-Ah-lTc"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0TK-oE-cZi" secondAttribute="trailing" constant="20" symbolic="YES" id="V29-h0-OhT"/>
+                                                <constraint firstItem="0TK-oE-cZi" firstAttribute="leading" secondItem="7sD-Kk-Hnd" secondAttribute="leading" constant="15" id="Xmn-Te-PJh"/>
+                                                <constraint firstItem="FAO-KV-hca" firstAttribute="leading" secondItem="7sD-Kk-Hnd" secondAttribute="leading" constant="15" id="azS-sI-xcN"/>
+                                                <constraint firstItem="plQ-NL-mdL" firstAttribute="leading" secondItem="FAO-KV-hca" secondAttribute="trailing" constant="18" id="eIk-w2-7ZZ"/>
+                                                <constraint firstItem="0TK-oE-cZi" firstAttribute="width" secondItem="7sD-Kk-Hnd" secondAttribute="width" constant="-60" id="sZm-BD-NYc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="couponNameLabel" destination="0TK-oE-cZi" id="Vfa-FQ-sPK"/>
+                                            <outlet property="expDateLabel" destination="FAO-KV-hca" id="yEf-DU-Dez"/>
+                                            <outlet property="savedCouponLabel" destination="plQ-NL-mdL" id="PTb-Na-DAB"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="fnB-fr-csc" id="tuJ-00-yuc"/>
+                                    <outlet property="delegate" destination="fnB-fr-csc" id="LeA-gZ-JMD"/>
+                                </connections>
+                            </tableView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="miP-YD-dBd">
+                                <rect key="frame" x="0.0" y="467" width="343" height="178"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="178" id="igM-Go-7gt"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="fnB-fr-csc" id="4BD-Ra-DLt"/>
+                                </connections>
+                            </mapView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9Fc-v5-4UV">
+                                <rect key="frame" x="0.0" y="359" width="302" height="38"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="6wg-Nt-VdY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ekc-rN-UfZ">
+                                <rect key="frame" x="0.0" y="415" width="302" height="32"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="QP7-Id-Bdm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBL-ic-iIP">
+                                <rect key="frame" x="0.0" y="632" width="80.5" height="32"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                <state key="normal" title="Save Store">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="SaveStore:" destination="fnB-fr-csc" eventType="touchUpInside" id="WJ2-rt-4Nd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdh-Cu-7bQ">
+                                <rect key="frame" x="48" y="632" width="80.5" height="32"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                <state key="normal" title="Block Store">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="BlockStore:" destination="fnB-fr-csc" eventType="touchUpInside" id="QkC-cJ-1vX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAG-x6-cEG">
+                                <rect key="frame" x="0.0" y="653" width="96" height="32"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                <state key="normal" title="Directions"/>
+                                <connections>
+                                    <action selector="getDirections:" destination="fnB-fr-csc" eventType="touchUpInside" id="nnD-SL-vPg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Awt-vT-b3g" firstAttribute="trailing" secondItem="ekc-rN-UfZ" secondAttribute="trailing" constant="57" id="5DC-jh-GHF"/>
+                            <constraint firstItem="9Fc-v5-4UV" firstAttribute="leading" secondItem="Awt-vT-b3g" secondAttribute="leading" constant="16" id="8UE-Eg-WPT"/>
+                            <constraint firstItem="tBL-ic-iIP" firstAttribute="bottom" secondItem="Awt-vT-b3g" secondAttribute="bottom" constant="-3" id="BA6-qm-ls6"/>
+                            <constraint firstItem="miP-YD-dBd" firstAttribute="top" secondItem="ekc-rN-UfZ" secondAttribute="bottom" constant="20" id="CeZ-97-xVO"/>
+                            <constraint firstItem="tBL-ic-iIP" firstAttribute="leading" secondItem="Awt-vT-b3g" secondAttribute="leading" constant="60" id="E0y-97-4fS"/>
+                            <constraint firstItem="Awt-vT-b3g" firstAttribute="trailing" secondItem="vdh-Cu-7bQ" secondAttribute="trailing" constant="43" id="JTU-XK-fux"/>
+                            <constraint firstItem="Awt-vT-b3g" firstAttribute="trailing" secondItem="nQm-Kb-wGB" secondAttribute="trailing" constant="9" id="M3f-qD-NZj"/>
+                            <constraint firstItem="ekc-rN-UfZ" firstAttribute="top" secondItem="9Fc-v5-4UV" secondAttribute="bottom" constant="18" id="N14-xH-auO"/>
+                            <constraint firstItem="Awt-vT-b3g" firstAttribute="trailing" secondItem="9Fc-v5-4UV" secondAttribute="trailing" constant="57" id="QDA-yb-eZq"/>
+                            <constraint firstItem="nQm-Kb-wGB" firstAttribute="top" secondItem="Awt-vT-b3g" secondAttribute="top" constant="43" id="Tso-7Q-b0u"/>
+                            <constraint firstItem="vdh-Cu-7bQ" firstAttribute="width" secondItem="tBL-ic-iIP" secondAttribute="width" id="W9f-Hn-zvA"/>
+                            <constraint firstItem="9Fc-v5-4UV" firstAttribute="top" secondItem="nQm-Kb-wGB" secondAttribute="bottom" constant="8" id="boW-Gj-EOd"/>
+                            <constraint firstItem="ekc-rN-UfZ" firstAttribute="leading" secondItem="Awt-vT-b3g" secondAttribute="leading" constant="16" id="c5v-J1-Ymd"/>
+                            <constraint firstItem="vdh-Cu-7bQ" firstAttribute="leading" secondItem="tBL-ic-iIP" secondAttribute="trailing" constant="111" id="cZF-dj-c58"/>
+                            <constraint firstItem="miP-YD-dBd" firstAttribute="leading" secondItem="Awt-vT-b3g" secondAttribute="leading" constant="16" id="dJi-QM-5hS"/>
+                            <constraint firstItem="mAG-x6-cEG" firstAttribute="top" secondItem="miP-YD-dBd" secondAttribute="bottom" constant="8" id="dzH-RD-Bhp"/>
+                            <constraint firstItem="nQm-Kb-wGB" firstAttribute="leading" secondItem="Awt-vT-b3g" secondAttribute="leading" constant="16" id="fNj-Yh-Clx"/>
+                            <constraint firstItem="vdh-Cu-7bQ" firstAttribute="bottom" secondItem="Awt-vT-b3g" secondAttribute="bottom" constant="-3" id="ife-UM-6wQ"/>
+                            <constraint firstItem="Awt-vT-b3g" firstAttribute="trailing" secondItem="mAG-x6-cEG" secondAttribute="trailing" constant="134" id="tR6-lc-a77"/>
+                            <constraint firstItem="mAG-x6-cEG" firstAttribute="leading" secondItem="Awt-vT-b3g" secondAttribute="leading" constant="145" id="ugz-do-UHW"/>
+                            <constraint firstItem="Awt-vT-b3g" firstAttribute="trailing" secondItem="miP-YD-dBd" secondAttribute="trailing" constant="16" id="yxT-gT-XZa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Awt-vT-b3g"/>
+                    </view>
+                    <connections>
+                        <outlet property="addressView" destination="9Fc-v5-4UV" id="SjG-26-Yq1"/>
+                        <outlet property="block" destination="vdh-Cu-7bQ" id="Wuf-BR-Tka"/>
+                        <outlet property="mapView" destination="miP-YD-dBd" id="7lT-OB-lcA"/>
+                        <outlet property="save" destination="tBL-ic-iIP" id="gaf-MC-uqY"/>
+                        <outlet property="tableViewOutlet" destination="nQm-Kb-wGB" id="AuT-Vr-Upn"/>
+                        <outlet property="websiteView" destination="ekc-rN-UfZ" id="gbz-7R-ydS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u9R-qO-rLm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1156" y="919.79010494752629"/>
+        </scene>
+        <!--Fast Deals-->
+        <scene sceneID="GXc-s7-lgU">
+            <objects>
+                <tableViewController id="m9D-F7-84i" customClass="TableViewController" customModule="FinalProject436" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="92" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pd3-Vw-aH6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     Store                 Number of Deals        Miles Away" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="D1j-xQ-Yv2">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell" rowHeight="92" id="5SP-BN-EQX" customClass="TableViewCell" customModule="FinalProject436" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="92"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5SP-BN-EQX" id="ifl-Jg-Mw5" customClass="TableViewCell" customModule="FinalProject436" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="91.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NumDeals" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZH-Ke-GDH">
+                                            <rect key="frame" x="128" y="5" width="141" height="59"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Miles" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufw-99-4pc">
+                                            <rect key="frame" x="281" y="6" width="91" height="56"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="storeLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VWL-EA-Sr5">
+                                            <rect key="frame" x="21" y="6" width="99" height="57"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="milesLabel" destination="Ufw-99-4pc" id="foH-C6-G4C"/>
+                                    <outlet property="numDealsLabel" destination="0ZH-Ke-GDH" id="weJ-lV-MDk"/>
+                                    <outlet property="storeLabel" destination="VWL-EA-Sr5" id="DzI-ix-3k6"/>
+                                    <segue destination="fnB-fr-csc" kind="show" identifier="storeSegue" id="siZ-bQ-3Jy"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="m9D-F7-84i" id="QFI-KL-DLK"/>
+                            <outlet property="delegate" destination="m9D-F7-84i" id="gdd-8m-V6L"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Fast Deals" id="a3D-YF-HBk">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="thy-Ua-D8j">
+                            <color key="tintColor" red="0.93835431337356567" green="0.71769285202026367" blue="0.85983282327651978" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="personalSettingsSegue" id="a1t-5A-kQ6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="settingsButton" destination="thy-Ua-D8j" id="A3v-ea-weA"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uUY-A6-rXM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1136.8" y="90.404797601199405"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HmL-6u-GrO">
+            <objects>
+                <navigationController id="l3n-Lf-iv2" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hAu-9Q-TKy">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vdP-Ty-Ru7" kind="relationship" relationship="rootViewController" id="rBZ-Ej-CFs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w6i-5N-ph1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-6" y="-45"/>
+        </scene>
+        <!--Real Login View Controller-->
+        <scene sceneID="Sjd-6F-MvG">
+            <objects>
+                <viewController title="Real Login View Controller" id="vdP-Ty-Ru7" customClass="RealLoginViewController" customModule="FinalProject436" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lmf-Ep-ogJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LzZ-Fn-NFx">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Login" id="uE9-mu-5ly"/>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O2p-4c-hm2">
+                                <rect key="frame" x="145" y="148" width="183" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="owN-tR-m06">
+                                <rect key="frame" x="145" y="253" width="183" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eu1-oI-3Js">
+                                <rect key="frame" x="50" y="153" width="87" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4DE-4d-MXF">
+                                <rect key="frame" x="160.5" y="367" width="54" height="32"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                <state key="normal" title="Sign In"/>
+                                <connections>
+                                    <action selector="loginButton:" destination="vdP-Ty-Ru7" eventType="touchUpInside" id="LAC-z9-Bpd"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8B-bJ-5Po">
+                                <rect key="frame" x="68.5" y="505" width="238" height="20"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8V-DX-TKS">
+                                <rect key="frame" x="129.5" y="533" width="116" height="32"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                <state key="normal" title="Create Account"/>
+                                <connections>
+                                    <segue destination="qLd-j7-n40" kind="show" identifier="createUserSegue" id="cLk-01-aL4"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nds-dg-dhb">
+                                <rect key="frame" x="44" y="262" width="87" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jJF-ds-4kR" firstAttribute="bottom" secondItem="W8B-bJ-5Po" secondAttribute="bottom" constant="142" id="18V-kc-w5z"/>
+                            <constraint firstItem="R8V-DX-TKS" firstAttribute="top" secondItem="W8B-bJ-5Po" secondAttribute="bottom" constant="8" id="9G8-bz-NAO"/>
+                            <constraint firstItem="4DE-4d-MXF" firstAttribute="top" secondItem="jJF-ds-4kR" secondAttribute="top" constant="303" id="RlB-c0-4U3"/>
+                            <constraint firstItem="W8B-bJ-5Po" firstAttribute="centerX" secondItem="jJF-ds-4kR" secondAttribute="centerX" id="kh9-lZ-LB9"/>
+                            <constraint firstItem="R8V-DX-TKS" firstAttribute="centerX" secondItem="jJF-ds-4kR" secondAttribute="centerX" id="off-uZ-bwq"/>
+                            <constraint firstItem="4DE-4d-MXF" firstAttribute="centerX" secondItem="jJF-ds-4kR" secondAttribute="centerX" id="qKJ-xa-QD9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jJF-ds-4kR"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Login" id="3y3-oS-PEJ"/>
+                    <connections>
+                        <outlet property="passwordField" destination="owN-tR-m06" id="vgn-lY-ZeD"/>
+                        <outlet property="userField" destination="O2p-4c-hm2" id="XWF-ub-mip"/>
+                        <segue destination="m9D-F7-84i" kind="show" identifier="loginSegue" id="Fkl-54-khG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2m5-Mf-rXS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="624.79999999999995" y="-639.13043478260875"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Fkl-54-khG"/>
+    </inferredMetricsTieBreakers>
 </document>
