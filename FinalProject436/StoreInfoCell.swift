@@ -1,16 +1,24 @@
 //
-//  SavedTableViewCell.swift
+//  StoreInfoCell.swift
 //  FinalProject436
 //
-//  Created by Megan Pieczynski on 3/12/18.
+//  Created by Local Account 436-03 on 2/28/18.
 //  Copyright © 2018 Megan Pieczynski. All rights reserved.
 //
 
 import UIKit
+import GeoFire
+import CoreLocation
+import MapKit
 
-class SavedTableViewCell: TableViewCell {
+class StoreInfoCell: UITableViewCell {
 
-    @IBOutlet weak var savedStoreLabel: UILabel!
+    @IBOutlet weak var couponNameLabel: UILabel!
+    @IBOutlet weak var expDateLabel: UILabel!
+    
+    
+    @IBOutlet weak var savedCouponLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

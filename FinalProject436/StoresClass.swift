@@ -21,8 +21,15 @@ class StoresClass : NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: latitude!, longitude: longitude!)
     }
-        
     
+    var title: String? {
+        return name
+    }
+        
+    func getLat() -> Double {
+        return self.latitude!
+
+    }
         
     init(name: String, latitude: Double, longitude: Double, address: String) {
             self.name = name

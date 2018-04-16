@@ -10,6 +10,8 @@ import UIKit
 
 class CouponTableViewCell: TableViewCell {
 
+    @IBOutlet weak var expDateLabel: UILabel!
+    @IBOutlet weak var couponNameLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
